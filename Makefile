@@ -6,24 +6,20 @@ YLW			= \033[0;33m
 RST			= \033[0m
 END			= \e[0m
 
-NAME		= philo
+NAME		= "name of your executable"
 
-FILES = philo \
-			philo_utils	\
-			philo_utils2	\
-			controls	\
+FILES = "put only the files name without path and .c"
 
-PROJECT_H	= Incl/philo.h
+PROJECT_H	= "put the .h with the path"
 OBJS		= $(SRCS:.c=.o)
 OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
-SRCS_DIR = ./Src/
+SRCS_DIR = "put yout files path"
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 
-OBJS_DIR = ./Src/
+OBJS_DIR = "put yout files path"
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
-PTHEAD_FLAG = -pthread
 CC			= gcc
 CC_FLAGS	= -Wall -Werror -Wextra
 
