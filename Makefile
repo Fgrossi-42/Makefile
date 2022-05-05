@@ -6,25 +6,25 @@ YLW			= \033[0;33m
 RST			= \033[0m
 END			= \e[0m
 
-NAME		= "name of your executable"
+NAME		= #"name of your executable"
 
-FILES = "put only the files name without path and .c"
+FILES = #"put only the files name without path and .c"
 
-PROJECT_H	= "put the .h with the path"
+PROJECT_H	= #"put the .h with the path"
 OBJS		= $(SRCS:.c=.o)
 OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
-SRCS_DIR = "put yout files path"
+SRCS_DIR = #"put yout files path"
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 
-OBJS_DIR = "put yout files path"
+OBJS_DIR = #"put yout files path"
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
 CC			= gcc
 CC_FLAGS	= -Wall -Werror -Wextra
 
 $(OBJS_DIR)%.o : %.c $(PROJECT_H)
-	@mkdir -p $(OBJS_DIR)src
+	@mkdir -p $(OBJS_DIR)#"the name of your files directory"
 	@$(CC) $(CC_FLAGS) $(PTHEAD_FLAG) -c $< -o $@
 	@printf	"\033[2K\r${GRN}[COMPILING]${RST} '$<' $(END)\n"
 
