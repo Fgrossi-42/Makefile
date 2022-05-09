@@ -25,7 +25,7 @@ CC_FLAGS	= -Wall -Werror -Wextra
 
 $(OBJS_DIR)%.o : %.c $(PROJECT_H)
 	@mkdir -p $(OBJS_DIR)#"the name of your files directory"
-	@$(CC) $(CC_FLAGS) $(PTHEAD_FLAG) -c $< -o $@
+	@$(CC) $(CC_FLAGS) -c $< -o $@
 	@printf	"\033[2K\r${GRN}[COMPILING]${RST} '$<' $(END)\n"
 
 $(NAME): $(OBJECTS_PREFIXED)
